@@ -1,0 +1,22 @@
+basic: &BASIC
+  encoding: utf8
+  adapter: mysql
+  username: root
+  password: root
+  host: localhost
+
+development:
+  <<: *BASIC
+  database: alexandria_development
+
+test: &TEST
+  <<: *BASIC
+  database: alexandria_test
+
+production:
+  <<: *BASIC
+  database: alexandria_production
+
+cucumber:
+  <<: *TEST
+

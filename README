@@ -1,1 +1,11 @@
+git clone git@github.com:cmilfont/alexandria.git
+cd alexandria
+sudo rake gems:install
+sudo rake gems:install RAILS_ENV=test
+sudo rake gems:install RAILS_ENV=cucumber
+cp utils/database.yml config/database.yml #using mysql
+rake db:migrate:reset
+rake db:reset
+rake db:seed
+script/server
 
