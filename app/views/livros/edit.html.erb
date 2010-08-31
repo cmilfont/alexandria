@@ -1,0 +1,24 @@
+<h1>Editing livro</h1>
+
+<% form_for(@livro) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :nome %><br />
+    <%= f.text_field :nome %>
+  </p>
+  <p>
+    <%= f.label :autor %><br />
+    <%= f.text_field :autor %>
+  </p>
+  <p>
+    <%= f.label :ano %><br />
+    <%= f.text_field :ano %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @livro %> |
+<%= link_to 'Back', livros_path %>

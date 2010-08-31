@@ -1,0 +1,24 @@
+<h1>Listing livros</h1>
+
+<table>
+  <tr>
+    <th>Nome</th>
+    <th>Autor</th>
+    <th>Ano</th>
+  </tr>
+
+<% @livros.each do |livro| %>
+  <tr>
+    <td><%=h livro.nome %></td>
+    <td><%=h livro.autor %></td>
+    <td><%=h livro.ano %></td>
+    <td><%= link_to 'Show', livro %></td>
+    <td><%= link_to 'Edit', edit_livro_path(livro) %></td>
+    <td><%= link_to 'Destroy', livro, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New livro', new_livro_path %>
