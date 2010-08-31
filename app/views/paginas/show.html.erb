@@ -1,0 +1,18 @@
+<p>
+  <b>Numero:</b>
+  <%=h @pagina.numero %>
+</p>
+
+<p>
+  <b>Texto:</b>
+  <%=h @pagina.texto %>
+</p>
+
+<p>
+  <b>Livro:</b>
+  <%=h @pagina.livro %>
+</p>
+
+
+<%= link_to 'Edit', edit_pagina_path(@pagina) %> |
+<%= link_to 'Back', paginas_path %>

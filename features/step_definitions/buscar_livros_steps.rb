@@ -1,17 +1,20 @@
 Dado /^que tenha livros cadastrados$/ do
-  pending # express the regexp above with the code you wish you had
+  Factory :livro
+  Factory :livro, :nome => "Extreme Programming",
+                  :autor => "Kent Beck",
+                  :ano => 1999
 end
 
-Dado /^que estou em "([^\"]*)"$/ do |arg1|
-  pending # express the regexp above with the code you wish you had
+Dado /^que estou em "([^\"]*)"$/ do |page_name|
+  visit path_to(page_name)
 end
 
-Dado /^preencho "([^\"]*)" com "([^\"]*)"$/ do |arg1, arg2|
-  pending # express the regexp above with the code you wish you had
+Dado /^preencho "([^\"]*)" com "([^\"]*)"$/ do |selector, value|
+  fill_in selector, :with => value
 end
 
-Quando /^eu clicar em "([^\"]*)"$/ do |arg1|
-  pending # express the regexp above with the code you wish you had
+Quando /^eu clicar em "([^\"]*)"$/ do |button|
+  click_button(button)
 end
 
 Então /^eu deverei ver$/ do |table|

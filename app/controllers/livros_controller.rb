@@ -1,4 +1,9 @@
 class LivrosController < ApplicationController
+
+  def buscas
+
+  end
+
   # GET /livros
   # GET /livros.xml
   def index
@@ -83,3 +88,4 @@ class LivrosController < ApplicationController
     end
   end
 end
+

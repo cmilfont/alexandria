@@ -1,0 +1,24 @@
+<h1>Listing paginas</h1>
+
+<table>
+  <tr>
+    <th>Numero</th>
+    <th>Texto</th>
+    <th>Livro</th>
+  </tr>
+
+<% @paginas.each do |pagina| %>
+  <tr>
+    <td><%=h pagina.numero %></td>
+    <td><%=h pagina.texto %></td>
+    <td><%=h pagina.livro %></td>
+    <td><%= link_to 'Show', pagina %></td>
+    <td><%= link_to 'Edit', edit_pagina_path(pagina) %></td>
+    <td><%= link_to 'Destroy', pagina, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New pagina', new_pagina_path %>
