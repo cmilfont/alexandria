@@ -9,7 +9,6 @@ Funcionalidade: Encontrar livros por autor
     Dado que tenha livros cadastrados
      E que tenha autores cadastrados
 
-  @wip
   Cenário: Busca pelo autor
     Dado que estou em "Buscar livros"
       E seleciono "autor" com "Ken Schwaber"
