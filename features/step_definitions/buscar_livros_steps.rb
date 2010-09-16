@@ -1,8 +1,13 @@
 Dado /^que tenha livros cadastrados$/ do
   Factory :livro
   Factory :livro, :nome => "Extreme Programming",
-                  :autor => "Kent Beck",
+                  #:autor => "Kent Beck",
                   :ano => 1999
+end
+
+Dado /^que tenha autores cadastrados$/ do
+  Factory :autor, :nome => "Kent Beck"
+  Factory :autor, :nome => "Ken Schwaber"
 end
 
 Dado /^que estou em "([^\"]*)"$/ do |page_name|
@@ -20,5 +25,10 @@ end
 Então /^eu deverei ver$/ do |table|
   # table is a Cucumber::Ast::Table
   pending # express the regexp above with the code you wish you had
+end
+
+Dado /^seleciono "([^\"]*)" com "([^\"]*)"$/ do |field, value|
+   #select(value, :from => field)
+  pending
 end
 

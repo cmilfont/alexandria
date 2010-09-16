@@ -2,7 +2,7 @@ class CreateLivros < ActiveRecord::Migration
   def self.up
     create_table :livros do |t|
       t.string :nome
-      t.string :autor
+      t.belongs_to :autor
       t.integer :ano
 
       t.timestamps
@@ -13,3 +13,4 @@ class CreateLivros < ActiveRecord::Migration
     drop_table :livros
   end
 end
+
