@@ -9,3 +9,10 @@ rake db:reset
 rake db:seed
 script/server
 
+
+
+###suporte a filas
+#instalar o redis e a gem do resque
+redis-server
+#na raiz do projeto
+rake resque:work QUEUE=* VERBOSE=1
