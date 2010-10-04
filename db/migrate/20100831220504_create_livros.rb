@@ -1,8 +1,8 @@
 class CreateLivros < ActiveRecord::Migration
   def self.up
     create_table :livros do |t|
-      t.string :nome
-      t.belongs_to :autor
+      t.string :titulo
+      t.decimal :preco
       t.integer :ano
 
       t.timestamps

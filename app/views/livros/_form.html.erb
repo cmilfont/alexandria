@@ -1,0 +1,24 @@
+<% form_for @livro, :html => { :multipart => true } do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :titulo %><br />
+    <%= f.text_field :titulo %>
+  </p>
+  <p>
+    <%= f.label :autor %><br />
+    <%= collection_select(:autor, :autor_id, Autor.all, :id, :nome) %>
+  </p>
+  <p>
+    <%= f.label :ano %><br />
+    <%= f.text_field :ano %>
+  </p>
+  <p>
+    <%= f.label :arquivo %><br />
+    <%= f.file_field :arquivo %>
+  </p>
+  <p>
+    <%= f.submit 'Salvar' %>
+  </p>
+<% end %>
+

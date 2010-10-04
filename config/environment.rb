@@ -9,6 +9,8 @@ Rails::Initializer.run do |config|
   config.gem 'sunspot', :lib => 'sunspot' , :version => '=1.0.3'
   config.gem 'sunspot_rails', :lib => 'sunspot/rails'  , :version => '=1.0.3'
 
+  config.gem 'resque'
+
   config.time_zone = 'UTC'
 
 end
