@@ -49,7 +49,7 @@ class LivrosController < ApplicationController
 
     respond_to do |format|
       if @livro.save
-        @livro.async_create_paginas
+        Livro.deliver(@livro.id)
         flash[:notice] = 'Livro was successfully created.'
         format.html { redirect_to(@livro) }
         format.xml  { render :xml => @livro, :status => :created, :location => @livro }

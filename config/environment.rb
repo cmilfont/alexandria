@@ -11,6 +11,8 @@ Rails::Initializer.run do |config|
 
   config.gem 'resque'
 
+  #config.gem 'pdf-reader' #, :lib => 'pdf/reader'
+
   config.time_zone = 'UTC'
 
 end

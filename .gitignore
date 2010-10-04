@@ -1,3 +1,5 @@
+dump.rdb
+public/system/
 test/*
 coverage/*
 .project

@@ -15,10 +15,11 @@ class Livro < ActiveRecord::Base
     integer :ano
   end
 
-  def self.perform(livro_id)
+  def processa(livro_id)
+    require 'pdf/reader'
     book = Livro.find(livro_id)
 
-    url = RAILS_ROOT + "/public" + book.file.url
+    url = RAILS_ROOT + "/public" + book.arquivo.url
   	receiver = PageTextReceiver.new
     pdf = PDF::Reader.file(url, receiver)
     page_number = 0
@@ -27,13 +28,26 @@ class Livro < ActiveRecord::Base
       book.paginas << Pagina.new(:texto => page, :numero => page_number)
     }
     Sunspot.index Pagina.all
-
-    #repo = Repository.find(repo_id)
-    #repo.create_archive(branch)
   end
 
-  def async_create_paginas
-    Resque.enqueue(Livro, self.id)
+  class << self
+
+    def queue
+      @queue
+    end
+
+    def queue=( new_queue )
+      @queue = new_queue
+    end
+
+    def deliver( id )
+      Resque.enqueue(Livro, id )
+    end
+
+    def perform( id )
+      new().processa(id)
+    end
+
   end
 
 end
