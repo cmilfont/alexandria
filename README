@@ -13,6 +13,7 @@ script/server
 
 ###suporte a filas
 #instalar o redis e a gem do resque
+#execute o comando abaixo
 redis-server
-#na raiz do projeto
+#E na raiz do projeto
 rake resque:work QUEUE=* VERBOSE=1
