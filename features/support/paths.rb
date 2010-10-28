@@ -10,8 +10,14 @@ module NavigationHelpers
 
     when /the home\s?page/
       '/'
+    when /the new paginacao_dos_autores page/
+      new_paginacao_dos_autores_path
+
     when /Buscar livros/
       '/buscas'
+
+    when /listagem de autores/
+      '/autores'
 
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
