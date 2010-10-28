@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(:version => 20101004182516) do
     t.datetime "updated_at"
   end
 
-  create_table "autores_livros", :force => true do |t|
+  create_table "autores_livros", :id => false, :force => true do |t|
     t.integer  "livro_id"
     t.integer  "autor_id"
     t.datetime "created_at"

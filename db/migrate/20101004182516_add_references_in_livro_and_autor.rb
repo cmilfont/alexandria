@@ -1,6 +1,6 @@
 class AddReferencesInLivroAndAutor < ActiveRecord::Migration
   def self.up
-    create_table :autores_livros do |t|
+    create_table :autores_livros, :id => false do |t|
       t.integer :livro_id
       t.integer :autor_id
 
