@@ -19,6 +19,9 @@ module NavigationHelpers
     when /listagem de autores/
       '/autores'
 
+    when /Cadastrar livros/
+      '/livros/new'
+
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
     #

@@ -6,11 +6,14 @@ Funcionalidade: Indicar os autores de um livro
   Para cadastrar os livros
 
   Contexto:
-    Dado que tenha autores cadastrados
+    Dado que tenho "autores"
+	|nome      |
+        |kent beck |
 
+@wip
   Cenário: Cadastro de livro
     Dado que estou em "Cadastrar livros"
-      E seleciono "autor" com "Ken Schwaber"
-    Quando eu clicar em "salvar"
-    Então eu deverei ver em autor "Ken Schwaber"
+      E seleciono "Autor" com "kent beck"
+    Quando eu clicar em "Salvar"
+    Então eu deverei ver em autor "kent beck"
 

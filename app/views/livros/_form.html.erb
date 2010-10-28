@@ -6,8 +6,8 @@
     <%= f.text_field :titulo %>
   </p>
   <p>
-    <%= f.label :autor %><br />
-	<%= collection_select(:autor, :autor_id, Autor.all, :id, :nome) %>
+    <%= f.label :autor_id %><br />
+	<%= collection_select(:livro, :autor_id, Autor.all, :id, :nome) %>
   </p>
   <p>
     <%= f.label :ano %><br />

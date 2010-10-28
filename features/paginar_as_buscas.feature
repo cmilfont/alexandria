@@ -21,7 +21,6 @@ Funcionalidade: Paginar as buscas
       | Kamasutra                           | Ari           | 1999 |
       | Como sair do Armário                | Palacio       | 2010 |
 
-  @wip
   Cenário: Busca pelo autor
     Dado que estou em "listagem de autores"
      Então eu deverei ver
@@ -30,7 +29,7 @@ Funcionalidade: Paginar as buscas
       | Ari           |
       | Diego         |
 
-  Cenário : Busca pelo autor
+  Cenário: Busca pelo autor
     Dado que estou em "listagem de autores"
         Entao eu não deverei ver
           | nome          |

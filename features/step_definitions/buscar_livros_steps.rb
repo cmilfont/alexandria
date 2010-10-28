@@ -28,7 +28,7 @@ Então /^eu deverei ver$/ do |table|
 end
 
 Dado /^seleciono "([^\"]*)" com "([^\"]*)"$/ do |field, value|
-   #select(value, :from => field)
-  pending
+   select(value, :from => field)
+  #pending
 end
 

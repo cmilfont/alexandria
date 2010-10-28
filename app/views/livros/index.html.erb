@@ -10,9 +10,9 @@
 <% @livros.each do |livro| %>
   <tr>
     <td><%=h livro.titulo %></td>
-    <% livro.autores.each {|autor| %>
-      <td><%=h autor.nome %></td>
-    <% } %>
+
+      <td><%=h livro.autor.nome %></td>
+
     <td><%=h livro.ano %></td>
     <td><%= link_to 'Show', livro %></td>
     <td><%= link_to 'Edit', edit_livro_path(livro) %></td>

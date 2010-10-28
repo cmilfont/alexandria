@@ -2,18 +2,10 @@ class Livro < ActiveRecord::Base
 
   @queue = :file_serve
 
-  has_and_belongs_to_many :autores
+	belongs_to :autor
   has_many :paginas, :dependent => :destroy
 
   has_attached_file :arquivo
-
-  searchable do
-    text :autor do
-      autores.map {|autor| autor.nome}
-    end
-    text :titulo
-    integer :ano
-  end
 
   def processa(livro_id)
     require 'pdf/reader'

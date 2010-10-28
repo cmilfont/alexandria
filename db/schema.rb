@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101004182516) do
+ActiveRecord::Schema.define(:version => 20101028205926) do
 
   create_table "autores", :force => true do |t|
     t.string   "nome"
@@ -33,6 +33,7 @@ ActiveRecord::Schema.define(:version => 20101004182516) do
     t.string   "arquivo_file_name"
     t.string   "arquivo_content_type"
     t.integer  "arquivo_file_size"
+    t.integer  "autor_id"
   end
 
   create_table "paginas", :force => true do |t|
