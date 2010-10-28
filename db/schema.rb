@@ -26,7 +26,7 @@ ActiveRecord::Schema.define(:version => 20101004182516) do
 
   create_table "livros", :force => true do |t|
     t.string   "titulo"
-    t.integer  "preco",                :limit => 10, :precision => 10, :scale => 0
+    t.decimal  "preco"
     t.integer  "ano"
     t.datetime "created_at"
     t.datetime "updated_at"
