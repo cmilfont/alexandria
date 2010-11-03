@@ -15,5 +15,5 @@ Funcionalidade: Indicar os autores de um livro
     Dado que estou em "Cadastrar livros"
       E seleciono "Autor" com "kent beck"
     Quando eu clicar em "Salvar"
-    Então eu deverei ver em autor "kent beck"
+    Então eu deverei ver  "Autor" com "kent beck"
 

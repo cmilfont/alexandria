@@ -22,13 +22,16 @@ Quando /^eu clicar em "([^\"]*)"$/ do |button|
   click_button(button)
 end
 
-Então /^eu deverei ver$/ do |table|
-  # table is a Cucumber::Ast::Table
-  pending # express the regexp above with the code you wish you had
+Então /^eu deverei ver  "([^"]*)" com "([^"]*)"$/ do |field, value|
+    if defined?(Spec::Rails::Matchers)
+      page.should have_content(value)
+    else
+      assert page.has_content?(value)
+    end
 end
+
 
 Dado /^seleciono "([^\"]*)" com "([^\"]*)"$/ do |field, value|
    select(value, :from => field)
-  #pending
 end
 
