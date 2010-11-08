@@ -30,16 +30,26 @@ Então /^eu deverei ver  "([^"]*)" com "([^"]*)"$/ do |field, value|
     end
 end
 
+#Então /^eu deverei ver$/ do |tabela|
+#  tabela.hashes.each do |hash|
+#      page.should have_content(hash) 
+# end
+#end
+
 Então /^eu deverei ver$/ do |tabela|
-  tabela.hashes.each do |hash|
-      page.should have_content(hash["nome"]) 
- end
+	tabela.hashes.each do |linha|
+		linha.each do |chave,valor|
+			page.should have_content("#{valor}") 
+		end
+	end
 end
 
 Então /^eu não deverei ver$/ do |tabela|
-  tabela.hashes.each do |hash|
-      page.should have_no_content(hash["nome"]) 
- end
+	tabela.hashes.each do |linha|
+		linha.each do |chave,valor|
+			page.should have_no_content("#{valor}") 
+		end 
+	end
 end
 
 

@@ -7,7 +7,8 @@ class LivrosController < ApplicationController
   # GET /livros
   # GET /livros.xml
   def index
-    @livros = Livro.all
+    #@livros = Livro.all
+    @livros = Livro.paginate :page => params[:page], :order => 'titulo ASC', :per_page => 3
 
     respond_to do |format|
       format.html # index.html.erb

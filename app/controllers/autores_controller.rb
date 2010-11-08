@@ -2,7 +2,7 @@ class AutoresController < ApplicationController
   # GET /autores
   # GET /autores.xml
   def index
-    @autores = Autor.all
+    #@autores = Autor.all
     @autores = Autor.paginate :page => params[:page], :order => 'nome ASC', :per_page => 3
 
     respond_to do |format|
