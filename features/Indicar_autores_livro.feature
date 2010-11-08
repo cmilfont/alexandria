@@ -10,7 +10,6 @@ Funcionalidade: Indicar os autores de um livro
 	|nome      |
         |kent beck |
 
-@wip
   Cenário: Cadastro de livro
     Dado que estou em "Cadastrar livros"
       E seleciono "Autor" com "kent beck"

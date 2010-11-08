@@ -22,6 +22,9 @@ module NavigationHelpers
     when /Cadastrar livros/
       '/livros/new'
 
+    when /listagem de livros/
+      '/livros'
+
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
     #

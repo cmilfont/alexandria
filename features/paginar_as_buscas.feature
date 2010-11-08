@@ -5,7 +5,7 @@ Funcionalidade: Paginar as buscas
   Para facilitar a visualização
 
  Contexto:
-    Dado que tenho autores
+    Dado que tenho "autores"
       | nome          |
       | Ken Schwaber  |
       | Ari           |
@@ -13,14 +13,15 @@ Funcionalidade: Paginar as buscas
       | Rafael        |
       | Palacio       |
 
-    Dado que tenho livros
-      | nome                                | autor         | ano  |
+    Dado que tenho "livros"
+      | titulo                              | autor_id      | ano  |
       | Agile Project Management with Scrum | Ken Schwaber  | 2004 |
       | O doce veneno do escorpião          | Diego         | 1998 |
       | O homem que copiava                 | Rafael        | 2002 |
       | Kamasutra                           | Ari           | 1999 |
       | Como sair do Armário                | Palacio       | 2010 |
 
+@wip
   Cenário: Busca pelo autor
     Dado que estou em "listagem de autores"
      Então eu deverei ver
@@ -29,6 +30,7 @@ Funcionalidade: Paginar as buscas
       | Ari           |
       | Diego         |
 
+@wip
   Cenário: Busca pelo autor
     Dado que estou em "listagem de autores"
         Entao eu não deverei ver
