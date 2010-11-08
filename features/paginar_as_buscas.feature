@@ -26,17 +26,13 @@ Funcionalidade: Paginar as buscas
     Dado que estou em "listagem de autores"
      Então eu deverei ver
       | nome          |
-      | Ken Schwaber  |
       | Ari           |
       | Diego         |
-
-@wip
-  Cenário: Busca pelo autor
-    Dado que estou em "listagem de autores"
-        Entao eu não deverei ver
-          | nome          |
-          | Rafael        |
-          | Palacio       |
+      | Ken Schwaber  |
+     E eu não deverei ver
+      | nome          |
+      | Palacio       |
+      | Rafael        |
 
 
   Cenário: Busca por livros

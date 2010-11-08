@@ -36,7 +36,7 @@ Então /^eu deverei ver$/ do |tabela|
  end
 end
 
-Entao /^eu não deverei ver$/ do |tabela|
+Então /^eu não deverei ver$/ do |tabela|
   tabela.hashes.each do |hash|
       page.should have_no_content(hash["nome"]) 
  end
