@@ -32,14 +32,14 @@ end
 
 #Então /^eu deverei ver$/ do |tabela|
 #  tabela.hashes.each do |hash|
-#      page.should have_content(hash) 
+#      page.should have_content(hash)
 # end
 #end
 
 Então /^eu deverei ver$/ do |tabela|
 	tabela.hashes.each do |linha|
 		linha.each do |chave,valor|
-			page.should have_content("#{valor}") 
+			page.should have_content("#{valor}")
 		end
 	end
 end
@@ -47,16 +47,17 @@ end
 Então /^eu não deverei ver$/ do |tabela|
 	tabela.hashes.each do |linha|
 		linha.each do |chave,valor|
-			page.should have_no_content("#{valor}") 
-		end 
+			page.should have_no_content("#{valor}")
+		end
 	end
 end
 
 Então /^eu não deverei ver os livros$/ do |tabela|
 	tabela.hashes.each do |linha|
-		linha.each do |chave,valor|
-			page.should have_no_xpath('/html/body/form/table[2]/tbody/tr[2]/td[3]', :text => "#{valor}")
-		end 
+
+	    xpath = "/html/body/form/table[2]/tbody/tr[child::td[contains(., '#{linha[:titulo]}' )] and child::td[contains(., '#{linha[:autor]}' )] and child::td[contains(., '#{linha[:ano]}' )]]"
+	    page.should have_no_xpath(xpath)
+
 	end
 end
 

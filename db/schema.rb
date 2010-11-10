@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(:version => 20101028205926) do
     t.datetime "updated_at"
   end
 
-  create_table "autores_livros", :id => false, :force => true do |t|
+  create_table "autores_livros", :force => true do |t|
     t.integer  "livro_id"
     t.integer  "autor_id"
     t.datetime "created_at"
@@ -26,7 +26,7 @@ ActiveRecord::Schema.define(:version => 20101028205926) do
 
   create_table "livros", :force => true do |t|
     t.string   "titulo"
-    t.decimal  "preco"
+    t.integer  "preco",                :limit => 10, :precision => 10, :scale => 0
     t.integer  "ano"
     t.datetime "created_at"
     t.datetime "updated_at"
