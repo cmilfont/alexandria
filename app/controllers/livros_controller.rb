@@ -1,7 +1,15 @@
 class LivrosController < ApplicationController
 
   def buscas
+	@sel_livro = Livro.new(params[:livro])
+	@livros = Livro.find(:all,:conditions =>["autor_id = ? ", @sel_livro.autor_id]).paginate :page => params[:page], :order => 'titulo ASC', :per_page => 3
 
+	#@livros = Livro.find(:all,:conditions =>["autor_id = ? ", params[:livro][:autor_id]]).paginate :page => params[:page], :order => 'titulo ASC', :per_page => 3
+
+    respond_to do |format|
+      format.html # buscas.html.erb
+      format.xml  { render :xml => @livros }
+    end
   end
 
   # GET /livros

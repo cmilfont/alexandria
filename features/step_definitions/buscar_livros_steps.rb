@@ -52,6 +52,14 @@ Então /^eu não deverei ver$/ do |tabela|
 	end
 end
 
+Então /^eu não deverei ver os livros$/ do |tabela|
+	tabela.hashes.each do |linha|
+		linha.each do |chave,valor|
+			page.should have_no_xpath('/html/body/form/table[2]/tbody/tr[2]/td[3]', :text => "#{valor}")
+		end 
+	end
+end
+
 
 Dado /^seleciono "([^\"]*)" com "([^\"]*)"$/ do |field, value|
    select(value, :from => field)

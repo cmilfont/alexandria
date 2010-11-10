@@ -1,6 +1,42 @@
-Buscas: <input name="busca" type="text"/>
-<input type="button" id="buscar" >
-<select id="autor">
-  <%  %>
-</select>
+<%= form_tag({:controller => "livros", :action => "buscas"}, :method => "get", :class => "nifty_form") %>
+
+<table>
+
+	<tr>
+		<td>Conte&uacute;do:</td>
+		<td><input name="busca" type="text" style="width:150px;"/></td>
+	</tr>
+	<tr>
+		<td><label for="livro_autor_id">Autor:</label></td>
+		<td><%= collection_select(:livro, :autor_id, Autor.all, :id, :nome)%></td>
+	</tr>
+	<tr>
+		<td></td>
+		<td align="right">
+			<input type="submit" id="buscar" value="Pesquisar" >
+		</td>
+	</tr>
+
+</table>
+
+<table>
+  <tr>
+    <th>Titulo</th>
+    <th>Autor</th>
+    <th>Ano</th>
+  </tr>
+
+<% @livros.each do |livro| %>
+  <tr>
+    <td><%=h livro.titulo %></td>
+
+      <td><%=h livro.autor.nome %></td>
+
+    <td><%=h livro.ano %></td>
+  </tr>
+<% end %>
+</table>
+<%= will_paginate @livros %>
+
+</form>
 

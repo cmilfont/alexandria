@@ -33,7 +33,6 @@ Funcionalidade: Paginar as buscas
       | Palacio       |
       | Rafael        |
 
-@wip
   Cenário: Busca por livros
     Dado que estou em "listagem de livros"
      Então eu deverei ver
