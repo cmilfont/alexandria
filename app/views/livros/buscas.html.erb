@@ -8,12 +8,13 @@
 	</tr>
 	<tr>
 		<td><label for="livro_autor_id">Autor:</label></td>
-		<td><%= collection_select(:livro, :autor_id, Autor.all, :id, :nome)%></td>
+		<td><%= collection_select(:livro, :autor_id, Autor.all, :id, :nome, 
+                        :include_blank => true, :selected => @sel_livro.autor_id )%></td>
 	</tr>
 	<tr>
 		<td></td>
 		<td align="right">
-			<input type="submit" id="buscar" value="Pesquisar" >
+			<input type="submit" id="buscar" value="Pesquisar" />
 		</td>
 	</tr>
 
@@ -39,4 +40,3 @@
 <%= will_paginate @livros %>
 
 </form>
-
