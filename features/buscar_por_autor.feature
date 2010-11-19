@@ -23,7 +23,6 @@ Funcionalidade: Encontrar livros por autor
       | Como sair do Armário                | 5         | 2010 |
       | Livro que nao conheco               | 1         | 2011 |
 
-@wip
   Cenário: Busca pelo autor
     Dado que estou em "Buscar livros"
       E seleciono "Autor" com "Ken Schwaber"
